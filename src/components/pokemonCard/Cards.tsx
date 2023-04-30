@@ -12,12 +12,14 @@ const Cards = ({ pokemon }) => {
     const [pokeImg, setPokeImg] = useState()
     const [searchInput, setSearchInput] = useState<string>('')
 
+
     const openPokeInfo = async (res): Promise<any> => {
         setPokeName(res.name)
         setPokeHeight(res.height)
         setPokeWeight(res.weight)
         setPokeImg(res.sprites.front_default)
         handleShow()
+
     }
 
     const PokemonWrapper = styled('div')({

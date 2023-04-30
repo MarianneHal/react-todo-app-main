@@ -3,16 +3,16 @@ import axios from 'axios'
 import { Button } from '@mui/material'
 
 import Cards from '@/components/pokemonCard/Cards'
-import { Pokemon } from '@/components/pokemonList/interface/pokemon'
+import { PokemonApiResponse } from '@/components/pokemonList/interface/pokemon.interface'
 
 export const PokemonList = () => {
-    const [pokeData, setPokeData] = useState<Pokemon[]>([])
+    const [pokeData, setPokeData] = useState<PokemonApiResponse[]>([])
     const [url, setUrl] = useState<string>('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0')
     const [nextUrl, setNextUrl] = useState<string>('')
     const [prevUrl, setPrevUrl] = useState<string>('')
     const [disable, setDisable] = useState<boolean>(true)
 
-    const getPokemonData = async (res): Promise<Pokemon[]> => {
+    const getPokemonData = async (res): Promise<PokemonApiResponse> => {
         res.map(async (item) => {
             const result = await axios.get(item.url)
             setPokeData((state) => {
@@ -70,5 +70,3 @@ export const PokemonList = () => {
         </>
     )
 }
-
-

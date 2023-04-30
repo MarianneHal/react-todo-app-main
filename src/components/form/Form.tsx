@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import { collection, onSnapshot, addDoc } from 'firebase/firestore'
-import { db } from '@/firebase/firebase'
+import { db } from '@/db/firebase'
 import { useFormik } from 'formik'
 import { Button, Input } from '@mui/material'
 

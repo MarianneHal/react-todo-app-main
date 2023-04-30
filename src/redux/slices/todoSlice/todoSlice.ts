@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { Todo } from '@/components/todo/interface/todo.interface'
-import axios from 'axios'
+
 
 type TodosState = {
     todos: Todo[]
